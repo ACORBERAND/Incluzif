@@ -13,3 +13,8 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
+g.notehead {
+    fill: green !important;
+    color: green !important;
+}

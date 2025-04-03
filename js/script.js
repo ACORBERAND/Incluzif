@@ -1,2 +1,8 @@
-// Ce fichier peut être utilisé pour ajouter des fonctionnalités supplémentaires si nécessaire
-console.log("Le script est chargé.");
+// const test = document.querySelectorAll("g.note")
+
+
+// window.addEventListener('DOMContentLoaded', () => {
+//     const notes = document.getElementsByClassName("note")
+
+//     console.log(notes)
+// })
