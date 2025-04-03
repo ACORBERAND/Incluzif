@@ -14,7 +14,31 @@ body {
     margin-right: auto;
 }
 
-g.notehead {
+.note-a {
     fill: green !important;
     color: green !important;
+}
+.note-b {
+    fill: red !important;
+    color: red !important;
+}
+.note-c {
+    fill: blue !important;
+    color: blue !important;
+}
+.note-d {
+    fill: orange !important;
+    color: orange !important;
+}
+.note-e {
+    fill: fuchsia !important;
+    color: fuchsia !important;
+}
+.note-f {
+    fill: yellow !important;
+    color: yellow !important;
+}
+.note-g {
+    fill: brown !important;
+    color: brown !important;
 }

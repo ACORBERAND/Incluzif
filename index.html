@@ -17,83 +17,26 @@
 
     <h2>Partition :</h2>
     <div id="notation"></div>
-    <div id="output"></div>
     <div class="panel-body">
         <div id="app" class="panel" style="border: 1px solid lightgray; min-height: 800px"></div>
     </div>
+    <div id="output"></div>
     <script>
-        document.addEventListener("DOMContentLoaded", (event) => {
-            verovio.module.onRuntimeInitialized = () => {
-                let tk = new verovio.toolkit();
-                fetch("./src/puccini.mei")
-                    .then(function (response) {
-                        return response.text();
-                    })
-                    .then(function (meiXML) {
-                        let svg = tk.renderData(meiXML, {});
-                        document.getElementById("notation").innerHTML = svg;
-                        console.log(tk.getElementAttr('note-0000000849365777'));
-                    }
-                    )
-            };
-        });
-    </script>
-
-    <script type="module">
-        /*
-          import "https://editor.verovio.org/javascript/app/verovio-app.js";
-          import "https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js";
-    
-          // Create the app - here with an empty option object
-          const app = new Verovio.App(document.getElementById("app"), {});
-          const vrvToolkit = new verovio.toolkit();
-    
-          // Load a file (MEI or MusicXML)
-          fetch("./src/puccini.mei")
-            .then(function (response) {
-              return response.text();
-            })
-            .then(function (text) {
-              app.loadData(text);
-              console.log(app.getElementAttr('note-0000000849365777'));
-            //   const parser = new DOMParser();
-            //   const xmlDoc = parser.parseFromString(data, 'application/xml');
-    
-            //   // Extraire toutes les notes du fichier XML
-            //   const notes = xmlDoc.getElementsByTagName('note');
-    
-            //   // Créer un tableau pour stocker les informations des notes
-            //   let notesInfo = [];
-            });
-    
-    
-    
-        //   document.querySelectorAll('g.note').forEach((note) => {
-        //     console.log(note)
-        //     // note.querySelectorAll("path").forEach((path) => {
-        //         //   path.setAttribute("fill", "red");
-        //         // });
-        //     });
-            
-        //     const notes = document.querySelectorAll('g.note')
-        //     console.log(notes)
-            
-          // let vrvToolkit = new verovio.Toolkit();
-    
-          // fetch("partition.musicxml").then(response => response.text()).then(xmlData => {
-          //     vrvToolkit.loadData(xmlData);
-    
-          //     let svg = vrvToolkit.renderToSVG();
-    
-          //     document.getElementById("partition").innerHTML = svg;
-    
-          //     document.querySelectorAll('g.note[data-pname="c"]').forEach(note => {
-          //         note.querySelectorAll('path').forEach(path => {
-          //             path.setAttribute("fill", "red");
-          //         })
-          //     })
-          // });
-          */
+        // document.addEventListener("DOMContentLoaded", (event) => {
+        //     verovio.module.onRuntimeInitialized = () => {
+        //         let tk = new verovio.toolkit();
+        //         fetch("./src/puccini.mei")
+        //             .then(function (response) {
+        //                 return response.text();
+        //             })
+        //             .then(function (meiXML) {
+        //                 let svg = tk.renderData(meiXML, {});
+        //                 document.getElementById("notation").innerHTML = svg;
+        //                 // console.log(tk.getElementAttr(pname));
+        //             }
+        //             )
+        //     };
+        // });
     </script>
     <script src="js/script.js"></script>
 </body>
