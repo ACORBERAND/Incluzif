@@ -1,7 +1,17 @@
+* {
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    padding: 20px;
+    overflow-y: hidden;
+}
+
+.panel-body{
+    overflow: hidden;
 }
 
 #app {
@@ -15,30 +25,33 @@ body {
 }
 
 .note-a {
-    fill: green !important;
-    color: green !important;
+    fill: #614FA6;
 }
+
 .note-b {
-    fill: red !important;
-    color: red !important;
+    fill: #E12B99;
 }
+
 .note-c {
-    fill: blue !important;
-    color: blue !important;
+    fill: #F70043;
 }
+
+.note-c-higher {
+    fill: #D60000;
+}
+
 .note-d {
-    fill: orange !important;
-    color: orange !important;
+    fill: #FF9700;
 }
+
 .note-e {
-    fill: fuchsia !important;
-    color: fuchsia !important;
+    fill: #FDF216;
 }
+
 .note-f {
-    fill: yellow !important;
-    color: yellow !important;
+    fill: #B5D946;
 }
+
 .note-g {
-    fill: brown !important;
-    color: brown !important;
+    fill: #009F96;
 }

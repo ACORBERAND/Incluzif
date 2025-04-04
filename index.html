@@ -4,41 +4,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Convertir PDF en MusicXML</title>
+    <title>Inclu'Zik</title>
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js" defer></script>
 </head>
 
 <body>
-    <h1>Convertir une partition PDF en MusicXML</h1>
-
     <input type="file" id="fileInput" accept=".pdf" />
     <button id="convertButton">Convertir</button>
-
-    <h2>Partition :</h2>
-    <div id="notation"></div>
-    <div class="panel-body">
+    <!-- <div id="notation" class="panel-body panel" style="border: 1px solid lightgray; min-height: 800px"></div> -->
+    <div id="notation" class="panel-body">
         <div id="app" class="panel" style="border: 1px solid lightgray; min-height: 800px"></div>
     </div>
     <div id="output"></div>
-    <script>
-        // document.addEventListener("DOMContentLoaded", (event) => {
-        //     verovio.module.onRuntimeInitialized = () => {
-        //         let tk = new verovio.toolkit();
-        //         fetch("./src/puccini.mei")
-        //             .then(function (response) {
-        //                 return response.text();
-        //             })
-        //             .then(function (meiXML) {
-        //                 let svg = tk.renderData(meiXML, {});
-        //                 document.getElementById("notation").innerHTML = svg;
-        //                 // console.log(tk.getElementAttr(pname));
-        //             }
-        //             )
-        //     };
-        // });
-    </script>
     <script src="js/script.js"></script>
+    <!-- <script type="module">import 'https://editor.verovio.org/javascript/app/verovio-app.js';</script> -->
 </body>
 
 </html>
