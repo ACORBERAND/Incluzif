@@ -2,26 +2,57 @@
     color: #000;
     margin: 0;
     padding: 0;
+    border: none;
 }
 
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    overflow-y: hidden;
 }
 
-.panel-body{
-    overflow: hidden;
+.panel-body {
+    overflow-x: scroll;
+    position: relative;
 }
 
-#app {
-    margin-top: 20px;
-    background-color: #f8f8f8;
-    border: 1px solid #ccc;
-    width: 100%;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+.score {
+    animation-duration: 35s;
+    will-change: transform;
+    position: relative;
+}
+/* 
+.score.animated {
+    animation-name: test;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes test {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+} */
+
+.panel-body::before {
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    height: 75%;
+    width: 21%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: 10;
+}
+
+.panel-body::after {
+    content: "";
+    position: absolute;
+    background-color: #000;
+    height: 75%;
+    width: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 21%;
 }
 
 .note-a {
@@ -54,4 +85,12 @@ body {
 
 .note-g {
     fill: #009F96;
+}
+
+
+.play {
+    color: black;
+    font-size: 30px;
+    background-color: transparent;
+    cursor: pointer;
 }

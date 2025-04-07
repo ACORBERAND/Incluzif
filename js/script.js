@@ -1,5 +1,10 @@
+const pausePlayButton = document.getElementById("playPauseButton")
+let scoreState = "pause"
+
 let doLowerOct = -1
 let firstDo = null
+const scoreContainer = document.getElementById("notation");
+
 document.addEventListener("DOMContentLoaded", () => {
     verovio.module.onRuntimeInitialized = () => {
         let tk = new verovio.toolkit();
@@ -10,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(function (meiXML) {
                 let svg = tk.renderData(meiXML,
                     {
-                        scale: 150,
+                        scale: 125,
                         adjustPageWidth: true,
                         adjustPageHeight: true,
                         breaks: "none",
@@ -18,11 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
                 console.log(tk.getOptions())
-                document.getElementById("notation").innerHTML = svg;
+                scoreContainer.innerHTML = svg
+                scoreContainer.children[0].classList.add("score")
 
                 const notes = document.querySelectorAll('.note');
 
                 Array.from(notes).forEach(note => {
+                    console.log(tk.getElementAttr(note.id))
                     const pname = tk.getElementAttr(note.id).pname
                     const oct = tk.getElementAttr(note.id).oct
 
@@ -35,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         if (doLowerOct === -1 || oct < doLowerOct) {
                             doLowerOct = oct
-                            console.log(oct + " do with higher oct than this will be red")
 
                             if (firstDo !== null && tk.getElementAttr(firstDo.id).oct > doLowerOct) {
                                 firstDo.classList.remove('note-c')
@@ -79,3 +85,17 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 });
 
+
+
+
+pausePlayButton.addEventListener("click", (e) => {
+    let test = 10
+
+    if (scoreState === "pause") {
+        pausePlayButton.children[0].src = "./assets/images/pause button.png"
+        scoreState = "play"
+    } else {
+        pausePlayButton.children[0].src = "./assets/images/play button.png"
+        scoreState = "pause"
+    }
+})
