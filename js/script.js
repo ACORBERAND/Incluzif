@@ -189,4 +189,35 @@ resetButton.addEventListener("click", () => {
                 scoreState = "pause";
             });
     }
+    progressBar.style.width = "0%";  // Remet la barre à zéro
+
 });
+
+
+const progressBar = document.getElementById('progress-bar');
+const notationDiv = document.getElementById('notation');
+
+// --- Fonction qui met à jour la barre de progression en fonction du scroll ---
+function updateProgressBar() {
+    const maxScrollLeft = notationDiv.scrollWidth - notationDiv.clientWidth;
+    const currentScrollLeft = notationDiv.scrollLeft;
+    const progress = (currentScrollLeft / maxScrollLeft) * 100;
+    progressBar.style.width = progress + "%";
+}
+
+// --- SCROLLING avec mise à jour de la progress bar ---
+function startScrolling() {
+    const msPerBeat = 60000 / tempo; // Durée d'un beat en ms
+    const scrollAmountPerBeat = 50;  // Pixels à défiler par beat
+
+    if (scrollInterval) clearInterval(scrollInterval);
+
+    scrollInterval = setInterval(() => {
+        notationDiv.scrollLeft += scrollAmountPerBeat / (msPerBeat / 30);
+        updateProgressBar(); // <-- Mettre à jour la barre en même temps que ça scroll
+    }, 30);
+}
+
+function stopScrolling() {
+    clearInterval(scrollInterval);
+}
