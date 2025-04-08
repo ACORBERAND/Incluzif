@@ -1,18 +1,12 @@
-* {
-    color: #000;
-    margin: 0;
-    padding: 0;
-    border: none;
+.score-container {
+    width: min-content;
+    overflow-x: hidden;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
-
-.panel-body {
+.player {
     overflow-x: scroll;
     position: relative;
+    max-width: 100dvw;
 }
 
 .score {
@@ -20,17 +14,6 @@ body {
     will-change: transform;
     position: relative;
 }
-/* 
-.score.animated {
-    animation-name: test;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
-}
-
-@keyframes test {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-} */
 
 .panel-body::before {
     content: "";
@@ -55,6 +38,7 @@ body {
     left: 21%;
 }
 
+
 .note-a {
     fill: #614FA6;
 }
@@ -68,7 +52,7 @@ body {
 }
 
 .note-c-higher {
-    fill: #D60000;
+    fill: #D70000;
 }
 
 .note-d {
@@ -87,6 +71,9 @@ body {
     fill: #009F96;
 }
 
+
+
+/* ??????????????????????????????????///////////////////////////////////??????????????????????????????????? */
 
 .play {
     color: black;
