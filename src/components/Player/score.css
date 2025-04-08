@@ -20,7 +20,7 @@
     position: absolute;
     background-color: #ffffff;
     height: 75%;
-    width: 21%;
+    width: 19.5%;
     top: 50%;
     transform: translateY(-50%);
     left: 0;
@@ -35,7 +35,11 @@
     width: 0.5rem;
     top: 50%;
     transform: translateY(-50%);
-    left: 21%;
+    left: 19.5%;
+}
+
+.panel * {
+    background-color: #ffffff;
 }
 
 
