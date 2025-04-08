@@ -15,6 +15,7 @@
   --medium-grey: #535353;
   --black: #000000;
   --card-background: #F5F2ED;
+  --card-background-hover: hsl(37, 49%, 85%);
   --tag-classic: #FF70C6;
   --tag-rock: #90BE6D;
   --tag-rap: #F19737;
@@ -34,8 +35,8 @@
 }
 
 body {
-  background-color: #01010A;
-  color: #ffffff;
+  background-color: var(--light-white);
+  color: var(--black);
   font-family: Arial, sans-serif;
   text-align: center;
 }
@@ -57,11 +58,15 @@ h3 {
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 48px;
 }
 
 h2 {
   font-size: 32px;
+}
+
+.regular{
+  font-weight: 400;
 }
 
 .container {
@@ -71,7 +76,7 @@ h2 {
   padding: 128px 5.2%;
 }
 .container.score-container{
-  padding: 48px 0;
+  padding: 32px 0;
 }
 
 .img-container {
@@ -89,11 +94,20 @@ h2 {
 }
 
 .primary-button {
-  background-color: var(--black);
   color: var(--light-white);
-  padding: 16px 24px;
-  border-radius: 16px;
+  background-color: var(--black);
+  padding: 16px 32px;
+  border-radius: 80px;
   cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.2s ease-in;
+  border: 2px solid var(--black);
+}
+
+.primary-button:hover {
+  background-color: transparent;
+  color: var(--black);
 }
 
 .gc-full {

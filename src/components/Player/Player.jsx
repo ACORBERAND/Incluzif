@@ -5,7 +5,7 @@ import "./score.css";
 export default function Player() {
   const container = useRef(null);
   const config = JSON.parse(localStorage.getItem("scoreInfos"));
-  
+
   useEffect(() => {
     const tk = new toolkit();
 
@@ -13,7 +13,7 @@ export default function Player() {
       .then((res) => res.text())
       .then((meiXML) => {
         const svg = tk.renderData(meiXML, {
-          scale: 125,
+          scale: 150,
           adjustPageWidth: true,
           adjustPageHeight: true,
           breaks: "none",

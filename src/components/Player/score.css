@@ -1,10 +1,12 @@
 .score-container {
     width: min-content;
     overflow-x: hidden;
+    row-gap: 64px;
 }
 
 .player {
     overflow-x: scroll;
+    scrollbar-width: none;
     position: relative;
     max-width: 100dvw;
 }
@@ -19,7 +21,7 @@
     content: "";
     position: absolute;
     background-color: #ffffff;
-    height: 75%;
+    height: 99%;
     width: 19.5%;
     top: 50%;
     transform: translateY(-50%);
@@ -31,15 +33,21 @@
     content: "";
     position: absolute;
     background-color: #000;
-    height: 75%;
-    width: 0.5rem;
+    height: 100%;
+    width: 0.3rem;
     top: 50%;
     transform: translateY(-50%);
     left: 19.5%;
+    opacity: 0.5;
+}
+
+.panel {
+    transform: translateX(-1%);
 }
 
 .panel * {
     background-color: #ffffff;
+    /* max-height: 80dvh; */
 }
 
 

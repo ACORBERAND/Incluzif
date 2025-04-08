@@ -5,9 +5,14 @@ export default function Playing() {
   return (
     <>
       <section className="container score-container">
-        <h1 className="gc-full tac">{config?.name}</h1>
-        <p className="gc-full ">{config?.author}</p>
+        <div className="gc-full">
+          <h1 className="tac">{config?.name}</h1>
+          <p className="">{config?.author}</p>
+        </div>
         <Player />
+        <div className="gc-full">
+          <button className="primary-button">Jouer la partition</button>
+        </div>
       </section>
     </>
   );
