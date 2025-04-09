@@ -58,11 +58,11 @@ h3 {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: calc(32px + (48 - 32) * ((100vw - 320px) / (1728 - 320)));
 }
 
 h2 {
-  font-size: 32px;
+  font-size: calc(24px + (32 - 24) * ((100vw - 320px) / (1728 - 320)));
 }
 
 .regular{
@@ -99,7 +99,7 @@ h2 {
   padding: 16px 32px;
   border-radius: 80px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1728 - 320)));
   font-weight: 500;
   transition: 0.2s ease-in;
   border: 2px solid var(--black);

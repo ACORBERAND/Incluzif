@@ -18,10 +18,10 @@ export default function ScoreList() {
             <article key={index} className={`card bgc-card `}>
               <div className={`play-tag  ${config.styleClass}`}>
                 <img
-                  width={80}
-                  height={80}
-                  src="/images/play_button_white.png"
-                  alt="play button"
+                  width={100}
+                  height={100}
+                  src="images/score_example.png"
+                  alt="Illustration de partition coloré"
                 />
               </div>
               <div className="score-info">
