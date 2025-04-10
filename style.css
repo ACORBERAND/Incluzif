@@ -1,0 +1,107 @@
+* {
+    color: #000;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    height: 100vh;
+}
+
+.title{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 32px;
+}
+
+
+.panel-body {
+    overflow-x: scroll;
+    position: relative;
+}
+
+.score {
+    height: 450px;
+    animation-duration: 35s;
+    will-change: transform;
+    position: relative;
+}
+
+.panel-body::before {
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    height: 75%;
+    width: 21%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: 10;
+}
+
+.panel-body::after {
+    content: "";
+    position: absolute;
+    background-color: #000;
+    height: 75%;
+    width: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 21%;
+}
+
+.note-a {
+    fill: #614FA6;
+}
+
+.note-b {
+    fill: #E12B99;
+}
+
+.note-c {
+    fill: #F70043;
+}
+
+.note-c-higher {
+    fill: #D60000;
+}
+
+.note-d {
+    fill: #FF9700;
+}
+
+.note-e {
+    fill: #FDF216;
+}
+
+.note-f {
+    fill: #B5D946;
+}
+
+.note-g {
+    fill: #009F96;
+}
+
+
+.play {
+    color: black;
+    font-size: 30px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.player{
+    height: 500px;
+}
+
+
+  
+
+  

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inclu'Zik</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js" defer></script>
+</head>
+<body>
+    <div class="title">
+        <h2>Au clair de la lune</h2>
+    </div>
+
+    <!-- Navbar avec menu burger -->
+    <nav class="navbar">
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <label for="tempo">Tempo (bpm): </label>
+    <input type="number" id="tempo" value="80" min="30" max="300">
+
+    <section class="player">
+        <div id="notation" class="panel-body">
+            <div id="app" class="panel"></div>
+            <div class="bar">test</div>
+        </div>
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+        <button id="playPauseButton" class="play"><img src="./assets/images/play button.png" alt="play button"></button>
+        <button id="resetButton">Reset</button>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

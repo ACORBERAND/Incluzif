@@ -9,13 +9,14 @@ export default function ScoreList() {
         <h2 className="gc-full p-b-16">Bibliothèque</h2>
         {scores.map((config, index) => (
           <Link
+            key={index}
             to="/playing"
             className="gc-full"
             onClick={() => {
               localStorage.setItem("scoreInfos", JSON.stringify(config));
             }}
           >
-            <article key={index} className={`card bgc-card `}>
+            <article className={`card bgc-card `}>
               <div className={`play-tag  ${config.styleClass}`}>
                 <img
                   width={100}
@@ -27,9 +28,7 @@ export default function ScoreList() {
               <div className="score-info">
                 <h2 className="p-b-8 gc-full regular">{config.name}</h2>
                 <p className="p-b-16 gc-full">{config.author}</p>
-                <p className={`tag m-b-16 gc-full`}>
-                  {config.style}
-                </p>
+                <p className={`tag m-b-16 gc-full`}>{config.style}</p>
               </div>
             </article>
           </Link>

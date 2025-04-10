@@ -110,6 +110,23 @@ h2 {
   color: var(--black);
 }
 
+.secondary-button {
+  color: var(--black);
+  background-color: transparent;
+  padding: 16px 32px;
+  border-radius: 80px;
+  cursor: pointer;
+  font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1728 - 320)));
+  font-weight: 500;
+  transition: 0.2s ease-in;
+  border: 2px solid var(--black);
+}
+
+.secondary-button:hover {
+  background-color: var(--black);
+  color: var(--light-white);
+}
+
 .gc-full {
   grid-column: 1/13;
 }
