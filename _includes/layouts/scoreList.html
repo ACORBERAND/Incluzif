@@ -1,0 +1,21 @@
+<head>
+  <link rel="stylesheet" href="/styles/scoreList.css">
+</head>
+
+<section class="container card-container">
+  <h2 class="gc-full p-b-16">Bibliothèque</h2>
+  {% for score in scores %}
+  <a href="/playing" class="gc-full" onclick="localStorage.setItem('scoreInfos', '{{ score | jsonify }}')">
+    <article class="card bgc-card">
+      <div class="play-tag {{ score.styleClass }}">
+        <img width="100" height="100" src="/images/score_example.png" alt="Illustration de partition coloré" />
+      </div>
+      <div class="score-info">
+        <h2 class="p-b-8 gc-full regular">{{ score.name }}</h2>
+        <p class="p-b-16 gc-full">{{ score.author }}</p>
+        <p class="tag m-b-16 gc-full">{{ score.style }}</p>
+      </div>
+    </article>
+  </a>
+  {% endfor %}
+</section>

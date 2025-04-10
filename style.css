@@ -1,107 +1,170 @@
+@font-face {
+  font-family: "Inter";
+  src: url(/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+@font-face {
+  font-family: "Tilt Wrap";
+  src: url(/fonts/Tilt_Warp/TiltWarp-Regular-VariableFont_XROT\,YROT.ttf);
+}
+
+:root {
+  --light-white: #F9F9F9;
+  --medium-white: #FFFEF1;
+  --light-grey: #D9D9D9;
+  --medium-grey: #535353;
+  --black: #000000;
+  --card-background: #F5F2ED;
+  --card-background-hover: hsl(37, 49%, 85%);
+  --tag-classic: #FF70C6;
+  --tag-rock: #90BE6D;
+  --tag-rap: #F19737;
+  --tag-pop: #49A7F0;
+  --tag-movie: #FFD857;
+  --tag-electro: #61D0C3;
+  --tag-jazz: #FC9191;
+  --tag-reggae: #9C83ED;
+}
+
 * {
-    color: #000;
-    margin: 0;
-    padding: 0;
-    border: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: "Inter", Arial, sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    height: 100vh;
+  background-color: var(--light-white);
+  color: var(--black);
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
-.title{
-    width: 100%;
-    height: 50px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 32px;
+a {
+  text-decoration: none;
+  text-align: center;
 }
 
-
-.panel-body {
-    overflow-x: scroll;
-    position: relative;
+.tac{
+  text-align: center;
 }
 
-.score {
-    height: 450px;
-    animation-duration: 35s;
-    will-change: transform;
-    position: relative;
+h1,
+h2,
+h3 {
+  font-family: "Tilt Wrap", Arial, sans-serif;
+  text-align: left;
 }
 
-.panel-body::before {
-    content: "";
-    position: absolute;
-    background-color: #ffffff;
-    height: 75%;
-    width: 21%;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    z-index: 10;
+h1 {
+  font-size: calc(32px + (48 - 32) * ((100vw - 320px) / (1728 - 320)));
 }
 
-.panel-body::after {
-    content: "";
-    position: absolute;
-    background-color: #000;
-    height: 75%;
-    width: 0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 21%;
+h2 {
+  font-size: calc(24px + (32 - 24) * ((100vw - 320px) / (1728 - 320)));
 }
 
-.note-a {
-    fill: #614FA6;
+.regular{
+  font-weight: 400;
 }
 
-.note-b {
-    fill: #E12B99;
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 128px 5.2%;
+}
+.container.score-container{
+  padding: 32px 0;
 }
 
-.note-c {
-    fill: #F70043;
+.img-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.note-c-higher {
-    fill: #D60000;
+.img-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
-.note-d {
-    fill: #FF9700;
+.primary-button {
+  color: var(--light-white);
+  background-color: var(--black);
+  padding: 16px 32px;
+  border-radius: 80px;
+  cursor: pointer;
+  font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1728 - 320)));
+  font-weight: 500;
+  transition: 0.2s ease-in;
+  border: 2px solid var(--black);
 }
 
-.note-e {
-    fill: #FDF216;
+.primary-button:hover {
+  background-color: transparent;
+  color: var(--black);
 }
 
-.note-f {
-    fill: #B5D946;
+.secondary-button {
+  color: var(--black);
+  background-color: transparent;
+  padding: 16px 32px;
+  border-radius: 80px;
+  cursor: pointer;
+  font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1728 - 320)));
+  font-weight: 500;
+  transition: 0.2s ease-in;
+  border: 2px solid var(--black);
 }
 
-.note-g {
-    fill: #009F96;
+.secondary-button:hover {
+  background-color: var(--black);
+  color: var(--light-white);
 }
 
-
-.play {
-    color: black;
-    font-size: 30px;
-    background-color: transparent;
-    cursor: pointer;
+.gc-full {
+  grid-column: 1/13;
 }
 
-.player{
-    height: 500px;
+@media screen and (min-width:860px) {
+
+  .gc-md-1-7 {
+    grid-column: 1/7;
+  }
+
+  .gc-md-7-13 {
+    grid-column: 7/13;
+  }
+
 }
 
+/*Padding*/
+.p-b-4 {
+  padding-bottom: 4px;
+}
 
-  
+.p-b-8 {
+  padding-bottom: 8px;
+}
 
-  
+.p-b-16 {
+  padding-bottom: 16px;
+}
+
+/* Margin */
+.m-b-4 {
+  margin-bottom: 4px;
+}
+
+.m-b-8 {
+  margin-bottom: 8px;
+}
+
+.m-b-16 {
+  margin-bottom: 16px;
+}
