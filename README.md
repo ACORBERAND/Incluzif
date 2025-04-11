@@ -27,3 +27,7 @@ Inclu’zik met à votre disposition une vaste bibliothèque de partitions color
 _site/assets/scores/Pour ajouter les partitions selon les styles de musique, au format .mei (lecture interactive) et .pdf (téléchargement).
 
 _site/src/components/ScoreList/scores.jsx ..Pour afficher les partitions sur la page d’accueil et permettre leur lecture en les reliant aux fichiers ajoutés précédemment.
+
+## 🔗 Lien figma
+
+https://www.figma.com/design/LpwyGDhjczrKiN3ZP3Pzlq/Inclu%E2%80%99Zik?node-id=93-455&t=whrRw0Haiy3RUbi5-0
