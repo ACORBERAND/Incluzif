@@ -1,12 +1,23 @@
-# React + Vite
+# Incluzik
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Inclu’zik met à votre disposition une vaste bibliothèque de partitions colorées pour faciliter votre apprentissage musical.
 
-Currently, two official plugins are available:
+## 📦 Fonctionnalités
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ Fonctionnalité 1: bibliothèque de partitions.
+- ✅ Fonctionnalité 2: couleurs sur les différentes notes présentes sur les partitions.
+- ✅ Fonctionnalité 3: Lecture des partitions.
+- ✅ Fonctionnalité 4: Possibilité de télécharger les partitions.
+- ✅ Fonctionnalité 5: Modification du BPM 
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies utilisées
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Langages : `JavaScript`, `React`, `Css`
+- Frameworks/librairies : `Eleventy`,`Verovio`
+- Autres outils : `netlify`
+
+## 📂 Ajout de partition
+
+_site/assets/scores/(pour ajouter les partitions suivant les styles de musique en format mei pour lire la partition et en format pdf pour le téléchargement)
+
+_site/src/components/ScoreList/scores.jsx (pour afficher la partition dans la page d'accueil et pouvoir lire la partition en la reliant à la source du fichier ajouté précédement)
