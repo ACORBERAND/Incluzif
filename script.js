@@ -113,26 +113,30 @@ if (bpmButton) {
     });
 }
 
-// Validation en temps réel de l'input
-tempoInput.addEventListener("input", () => {
-    let value = parseInt(tempoInput.value);
 
-    if (isNaN(value)) {
-        value = 80; // Valeur par défaut
-    } else if (value < 40) {
-        value = 40;
-    } else if (value > 340) {
-        value = 340;
-    }
+if (tempoInput) {
 
-    tempoInput.value = value;
-});
+    // Validation en temps réel de l'input
+    tempoInput.addEventListener("input", () => {
+        let value = parseInt(tempoInput.value);
+
+        if (isNaN(value)) {
+            value = 80; // Valeur par défaut
+        } else if (value < 40) {
+            value = 40;
+        } else if (value > 340) {
+            value = 340;
+        }
+
+        tempoInput.value = value;
+    });
+    tempoInput.addEventListener("input", () => {
+        tempo = parseInt(tempoInput.value);
+    });
+}
 
 
 
-tempoInput.addEventListener("input", () => {
-    tempo = parseInt(tempoInput.value);
-});
 
 if (pausePlayButton) {
 
