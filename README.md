@@ -7,14 +7,14 @@ Inclu’zik met à votre disposition une vaste bibliothèque de partitions color
 - ✅ Fonctionnalité 1: Bibliothèque de partitions
 - ✅ Fonctionnalité 2: Couleurs appliquées sur les différentes notes des partitions
 - ✅ Fonctionnalité 3: Lecture interactive des partitions
-- ✅ Fonctionnalité 4: Possibilité de télécharger les partitions
-- ✅ Fonctionnalité 5: Modification du BPM (Battements Par Minute)
+- ✅ Fonctionnalité 4: Modification du BPM (Battements Par Minute)
 
 ## 🥸�MVP
 - Annotation des partitions
 - Changement des couleurs des notes directement sur le site
 - Ajout d’un convertisseur PDF en MEI pour ensuite lire une partition
 - Enregistrement des partitions ajoutées par les utilisateurs dans une base de données
+- Possibilité de télécharger les partitions
 
 ## 🛠️ Technologies utilisées
 
