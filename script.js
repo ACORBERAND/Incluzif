@@ -4,7 +4,7 @@ const bpmModalContainer = document.getElementById("bpmModalContainer");
 const bpmButton = document.getElementById("bpm");
 const closeModalBpm = document.getElementById("closeModalBpm");
 const progressBar = document.getElementById('progressBar');
-const resetButton = document.getElementById("resetButton");
+const resetButton = document.getElementById("restart");
 const validateBpmBtn = document.getElementById('validInput');
 const tempoInput = document.getElementById("tempo");
 
@@ -191,18 +191,17 @@ function stopScrolling() {
 
 
 // // --- RESET BUTTON ---
-// resetButton.addEventListener("click", () => {
-//     // Arrête tout
-//     stopScrolling();
-//     // Revenir visuellement tout à gauche
-//     const notationDiv = document.getElementById("notation");
-//     if (notationDiv) {
-//         notationDiv.scrollLeft = 0;
-//     }
+resetButton.addEventListener("click", () => {
+    // Arrête tout
+    stopScrolling();
+    // Revenir visuellement tout à gauche
+    const notationDiv = document.getElementById("notation");
+    if (notationDiv) {
+        notationDiv.scrollLeft = 0;
+    }
 
-//     // Remet l'icône sur Play
-//     pausePlayButton.children[0].src = "./assets/images/play button.png";
-//     scoreState = "pause";
-//     progressBar.style.width = "0%";  // Remet la barre à zéro
+    pausePlayButton.innerText = "Jouer la partition";
+    scoreState = "pause";
+    progressBar.style.width = "0%";  // Remet la barre à zéro
 
-// });
+});
