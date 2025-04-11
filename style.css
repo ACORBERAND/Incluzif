@@ -77,6 +77,7 @@ h2 {
   padding: 128px 5.2%;
 }
 
+
 .container.score-container {
   padding: 32px 0;
 }
@@ -205,7 +206,7 @@ h2 {
 /* ******************************************** ScoreList ******************************************** */
 .score-list {
   display: grid;
-  grid-template-columns: repeat(12,1fr);
+  grid-template-columns: repeat(12, 1fr);
   row-gap: 32px;
 }
 
@@ -291,7 +292,7 @@ h2 {
   width: 0.5rem;
   top: 16px;
   transform: translateX(-50%);
-  left: 50%;
+  left: 35%;
   opacity: 0.75;
 }
 
@@ -396,4 +397,44 @@ h2 {
   border-radius: 4px 0 0 4px;
 }
 
-/* ******************************************** Score ******************************************** */
+.bpm-modal-container {
+  display: none;
+}
+
+.bpm-modal-container.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.bpm-modal {
+  display: grid;
+  background-color: var(--card-background);
+  border-radius: 16px;
+  padding: 16px 64px;
+  row-gap: 64px;
+  justify-items: center;
+  position: relative;
+}
+
+.close-bpm-modal{
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.input-bpm {
+  border-radius: 200px;
+  padding: 16px;
+  width: 50%;
+}

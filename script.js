@@ -1,13 +1,16 @@
 const container = document.getElementById("notation");
 const pausePlayButton = document.getElementById("playPause");
+const bpmModalContainer = document.getElementById("bpmModalContainer");
+const bpmButton = document.getElementById("bpm");
+const closeModalBpm = document.getElementById("closeModalBpm");
 const progressBar = document.getElementById('progressBar');
 const resetButton = document.getElementById("resetButton");
+const validateBpmBtn = document.getElementById('validInput');
 const tempoInput = document.getElementById("tempo");
 
 let scoreState = "pause";
 let scrollInterval = null;
 let tempo = 80;
-
 
 window.addEventListener("DOMContentLoaded", () => {
     const tk = new verovio.toolkit();
@@ -25,6 +28,7 @@ window.addEventListener("DOMContentLoaded", () => {
         .then((res) => res.text())
         .then((meiXML) => {
             const svg = tk.renderData(meiXML, {
+                scale: 125,
                 adjustPageWidth: true,
                 adjustPageHeight: true,
                 breaks: "none",
@@ -75,35 +79,76 @@ window.addEventListener("DOMContentLoaded", () => {
         });
 });
 
+if (container) {
+    container.addEventListener("scroll", () => {
+        startProgressBar()
+    })
+}
+if (bpmButton) {
+    bpmButton.addEventListener("click", () => {
+        bpmModalContainer.classList.add("active")
+    })
 
+    bpmModalContainer.addEventListener("click", (e) => {
+        if (e.target === bpmModalContainer || e.target === closeModalBpm)
+            bpmModalContainer.classList.remove("active")
+    })
 
-container.addEventListener("scroll", () => {
-    startProgressBar()
-    
-})
+    validateBpmBtn.addEventListener("click", () => {
+        const newTempo = parseInt(tempoInput.value);
 
+        // Validation
+        if (newTempo >= 40 && newTempo <= 340) {
+            tempo = newTempo;
+            bpmModalContainer.classList.remove('active');
 
+            // Si la partition est en cours de lecture, mettez à jour le scrolling
+            if (scoreState === "play") {
+                stopScrolling();
+                startScrolling();
+            }
+        } else {
+            alert("Le BPM doit être entre 40 et 340");
+        }
+    });
+}
 
-// tempoInput.addEventListener("input", () => {
-//     tempo = parseInt(tempoInput.value);
-// });
+// Validation en temps réel de l'input
+tempoInput.addEventListener("input", () => {
+    let value = parseInt(tempoInput.value);
 
-
-
-// --- PLAY/PAUSE ---
-pausePlayButton.addEventListener("click", () => {
-    if (scoreState === "pause") {
-        pausePlayButton.innerText = "Pause";
-        scoreState = "play";
-        startScrolling();
-    } else {
-        pausePlayButton.innerText = "Jouer la partition";
-        scoreState = "pause";
-        stopScrolling();
+    if (isNaN(value)) {
+        value = 80; // Valeur par défaut
+    } else if (value < 40) {
+        value = 40;
+    } else if (value > 340) {
+        value = 340;
     }
+
+    tempoInput.value = value;
 });
 
 
+
+tempoInput.addEventListener("input", () => {
+    tempo = parseInt(tempoInput.value);
+});
+
+if (pausePlayButton) {
+
+    // --- PLAY/PAUSE ---
+    pausePlayButton.addEventListener("click", () => {
+        if (scoreState === "pause") {
+            pausePlayButton.innerText = "Pause";
+            scoreState = "play";
+            startScrolling();
+        } else {
+            pausePlayButton.innerText = "Jouer la partition";
+            scoreState = "pause";
+            stopScrolling();
+        }
+    });
+}
 
 // --- SCROLLING avec mise à jour de la progress bar ---
 function startScrolling() {
