@@ -27,6 +27,7 @@ export default function Playing() {
             Retour
           </Link>
           <div className="tools-container">
+          <button className="secondary-button">Modifier le BPM</button>
             <button
               className="primary-button"
               onClick={() => {
@@ -39,7 +40,7 @@ export default function Playing() {
             >
               {isPlaying ? "Pause" : "Jouer la partition"}
             </button>
-            <button className="secondary-button">Modifier le BPM</button>
+            <button className="secondary-button">Télécharger</button>
           </div>
         </div>
       </section>
