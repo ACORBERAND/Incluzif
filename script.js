@@ -37,6 +37,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
             if (container) {
                 container.innerHTML = svg;
+
+                if (!container.firstChild) return;
                 container.firstChild.classList.add("score");
 
                 const notes = container.querySelectorAll(".note");
@@ -190,18 +192,21 @@ function stopScrolling() {
 }
 
 
-// // --- RESET BUTTON ---
-resetButton.addEventListener("click", () => {
-    // Arrête tout
-    stopScrolling();
-    // Revenir visuellement tout à gauche
-    const notationDiv = document.getElementById("notation");
-    if (notationDiv) {
-        notationDiv.scrollLeft = 0;
-    }
+if (resetButton) {
 
-    pausePlayButton.innerText = "Jouer la partition";
-    scoreState = "pause";
-    progressBar.style.width = "0%";  // Remet la barre à zéro
+    // // --- RESET BUTTON ---
+    resetButton.addEventListener("click", () => {
+        // Arrête tout
+        stopScrolling();
+        // Revenir visuellement tout à gauche
+        const notationDiv = document.getElementById("notation");
+        if (notationDiv) {
+            notationDiv.scrollLeft = 0;
+        }
 
-});
+        pausePlayButton.innerText = "Jouer la partition";
+        scoreState = "pause";
+        progressBar.style.width = "0%";  // Remet la barre à zéro
+
+    });
+}

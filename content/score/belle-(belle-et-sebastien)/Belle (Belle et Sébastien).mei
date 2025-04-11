@@ -33,7 +33,7 @@
                         <layer xml:id="m1s1l1" n="1">
                            <note xml:id="nlv2g8r" dur="4" pname="c" oct="5">
                               <verse xml:id="vsndh6z" n="1">
-                                 <syl>du film "Belle et S�bastien"</syl>
+                                 <syl></syl>
                               </verse>
                               <accid accid.ges="s" />
                            </note>

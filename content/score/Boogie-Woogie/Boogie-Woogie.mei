@@ -33,7 +33,7 @@
                         <layer xml:id="m1s1l1" n="1">
                            <note xml:id="neri9tt" dur="4" pname="c" oct="4">
                               <verse xml:id="vzos5m9" n="1">
-                                 <syl>C7C7</syl>
+                                 <syl></syl>
                               </verse>
                            </note>
                            <note xml:id="n285rfb" dur="4" pname="e" oct="4" />
