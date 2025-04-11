@@ -4,11 +4,17 @@ Inclu’zik met à votre disposition une vaste bibliothèque de partitions color
 
 ## 📦 Fonctionnalités
 
-- ✅ Fonctionnalité 1: bibliothèque de partitions.
-- ✅ Fonctionnalité 2: couleurs sur les différentes notes présentes sur les partitions.
-- ✅ Fonctionnalité 3: Lecture des partitions.
-- ✅ Fonctionnalité 4: Possibilité de télécharger les partitions.
-- ✅ Fonctionnalité 5: Modification du BPM 
+- ✅ Fonctionnalité 1: Bibliothèque de partitions
+- ✅ Fonctionnalité 2: Couleurs appliquées sur les différentes notes des partitions
+- ✅ Fonctionnalité 3: Lecture interactive des partitions
+- ✅ Fonctionnalité 4: Possibilité de télécharger les partitions
+- ✅ Fonctionnalité 5: Modification du BPM (Battements Par Minute)
+
+## 🥸�MVP
+- Annotation des partitions
+- Changement des couleurs des notes directement sur le site
+- Ajout d’un convertisseur PDF en MEI pour ensuite lire une partition
+- Enregistrement des partitions ajoutées par les utilisateurs dans une base de données
 
 ## 🛠️ Technologies utilisées
 
@@ -18,6 +24,6 @@ Inclu’zik met à votre disposition une vaste bibliothèque de partitions color
 
 ## 📂 Ajout de partition
 
-_site/assets/scores/(pour ajouter les partitions suivant les styles de musique en format mei pour lire la partition et en format pdf pour le téléchargement)
+_site/assets/scores/Pour ajouter les partitions selon les styles de musique, au format .mei (lecture interactive) et .pdf (téléchargement).
 
-_site/src/components/ScoreList/scores.jsx (pour afficher la partition dans la page d'accueil et pouvoir lire la partition en la reliant à la source du fichier ajouté précédement)
+_site/src/components/ScoreList/scores.jsx ..Pour afficher les partitions sur la page d’accueil et permettre leur lecture en les reliant aux fichiers ajoutés précédemment.
