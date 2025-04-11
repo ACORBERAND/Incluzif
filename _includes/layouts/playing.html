@@ -12,8 +12,8 @@ permalink: /score/{{ title | slug }}/
         </div>
     </div>
     <div class="player gc-full">
-        <div id="notation" class="panel-body" data-mei-path="{{ mei_file }}">
-            <div id="panel" class="panel"> </div>
+        <div class="panel-body">
+            <div id="notation" class="panel" data-mei-path="{{ mei_file }}"></div>
         </div>
         <div class="progress-bar-container">
             <div id="progressBar" class="progress-bar"></div>
@@ -25,10 +25,19 @@ permalink: /score/{{ title | slug }}/
             Retour
         </a>
         <div class="tools-container">
-            <button class="primary-button">
+            <button id="playPause" class="primary-button">
                 Jouer la partition
             </button>
-            <button class="secondary-button">Modifier le BPM</button>
+            <button id="bpm" class="secondary-button">Modifier le BPM</button>
+        </div>
+    </div>
+
+    <div id="bpmModalContainer" class="bpm-modal-container">
+        <div class="bpm-modal">
+            <h2 class="gc-full">Modification du BPM</h2>
+            <input  id="tempo" class="gc-full input-bpm" type="number" type="range" min="40" max="340" value="80">
+            <button id="validInput" class="gc-full primary-button">Valider</button>
+            <span id="closeModalBpm" class="close-bpm-modal">X</span>
         </div>
     </div>
 </section>
