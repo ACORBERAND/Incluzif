@@ -370,6 +370,11 @@ h2 {
 
 .return {
   color: var(--black);
+  padding: 16px;
+}
+
+.return:hover {
+  text-decoration: underline;
 }
 
 .progress-bar-container {

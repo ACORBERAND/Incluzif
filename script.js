@@ -1,6 +1,16 @@
+const container = document.getElementById("notation");
+const pausePlayButton = document.getElementById("playPause");
+const progressBar = document.getElementById('progressBar');
+const resetButton = document.getElementById("resetButton");
+const tempoInput = document.getElementById("tempo");
+
+let scoreState = "pause";
+let scrollInterval = null;
+let tempo = 80;
+
+
 window.addEventListener("DOMContentLoaded", () => {
     const tk = new verovio.toolkit();
-    const container = document.getElementById("notation");
 
     if (!container) return;
 
@@ -66,19 +76,13 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 
-const pausePlayButton = document.getElementById("playPauseButton");
-const resetButton = document.getElementById("resetButton");
-let scoreState = "pause";
 
-const scoreContainer = document.getElementById("notation");
-
-let tk = null; // Toolkit rendu GLOBAL ici
-let scrollInterval = null;  // Timer pour faire défiler
+container.addEventListener("scroll", () => {
+    startProgressBar()
+    
+})
 
 
-// // --- TEMPO ---
-// let tempo = 80; // tempo par défaut
-// const tempoInput = document.getElementById("tempo");
 
 // tempoInput.addEventListener("input", () => {
 //     tempo = parseInt(tempoInput.value);
@@ -86,18 +90,56 @@ let scrollInterval = null;  // Timer pour faire défiler
 
 
 
-// // --- PLAY/PAUSE ---
-// pausePlayButton.addEventListener("click", () => {
-//     if (scoreState === "pause") {
-//         pausePlayButton.children[0].src = "./assets/images/pause button.png";
-//         scoreState = "play";
-//         startScrolling();
-//     } else {
-//         pausePlayButton.children[0].src = "./assets/images/play button.png";
-//         scoreState = "pause";
-//         stopScrolling();
-//     }
-// });
+// --- PLAY/PAUSE ---
+pausePlayButton.addEventListener("click", () => {
+    if (scoreState === "pause") {
+        pausePlayButton.innerText = "Pause";
+        scoreState = "play";
+        startScrolling();
+    } else {
+        pausePlayButton.innerText = "Jouer la partition";
+        scoreState = "pause";
+        stopScrolling();
+    }
+});
+
+
+
+// --- SCROLLING avec mise à jour de la progress bar ---
+function startScrolling() {
+    const msPerBeat = 60000 / tempo; // Durée d'un beat en ms
+    const scrollAmountPerBeat = 50;  // Pixels à défiler par beat
+
+    if (scrollInterval) clearInterval(scrollInterval);
+
+    scrollInterval = setInterval(() => {
+        container.scrollLeft += scrollAmountPerBeat / (msPerBeat / 30);
+        updateProgressBar(); // <-- Mettre à jour la barre en même temps que ça scroll
+    }, 30);
+}
+
+// --- Fonction qui met à jour la barre de progression en fonction du scroll ---
+function updateProgressBar() {
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+    const currentScrollLeft = container.scrollLeft;
+    const progress = (currentScrollLeft / maxScrollLeft) * 100;
+    progressBar.style.width = progress + "%";
+}
+
+
+function startProgressBar() {
+    const progressBar = document.getElementById("progressBar");
+
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+    const currentScrollLeft = container.scrollLeft;
+    const progress = (currentScrollLeft / maxScrollLeft) * 100;
+    progressBar.style.width = progress + "%";
+}
+
+function stopScrolling() {
+    clearInterval(scrollInterval);
+}
+
 
 // // --- RESET BUTTON ---
 // resetButton.addEventListener("click", () => {
@@ -115,33 +157,3 @@ let scrollInterval = null;  // Timer pour faire défiler
 //     progressBar.style.width = "0%";  // Remet la barre à zéro
 
 // });
-
-const progressBar = document.getElementById('progress-bar');
-const notationDiv = document.getElementById('notation');
-
-// --- Fonction qui met à jour la barre de progression en fonction du scroll ---
-function updateProgressBar() {
-    const maxScrollLeft = notationDiv.scrollWidth - notationDiv.clientWidth;
-    const currentScrollLeft = notationDiv.scrollLeft;
-    const progress = (currentScrollLeft / maxScrollLeft) * 100;
-    progressBar.style.width = progress + "%";
-}
-
-
-
-// --- SCROLLING avec mise à jour de la progress bar ---
-function startScrolling() {
-    const msPerBeat = 60000 / tempo; // Durée d'un beat en ms
-    const scrollAmountPerBeat = 50;  // Pixels à défiler par beat
-
-    if (scrollInterval) clearInterval(scrollInterval);
-
-    scrollInterval = setInterval(() => {
-        notationDiv.scrollLeft += scrollAmountPerBeat / (msPerBeat / 30);
-        updateProgressBar(); // <-- Mettre à jour la barre en même temps que ça scroll
-    }, 30);
-}
-
-function stopScrolling() {
-    clearInterval(scrollInterval);
-}
