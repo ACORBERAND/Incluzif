@@ -267,10 +267,10 @@ h2 {
 
 /* ******************************************** Score ******************************************** */
 .score-container {
-  width: min-content;
   overflow-x: hidden;
   row-gap: 32px;
   background-color: var(--card-background);
+  min-height: 100dvh;
 }
 
 .player {
@@ -283,18 +283,6 @@ h2 {
   position: relative;
 }
 
-.panel-body::before {
-  content: "";
-  position: absolute;
-  background-color: #ffffff;
-  height: calc(100% - 16px);
-  width: 15.5%;
-  top: 16px;
-  /* transform: translateY(-50%); */
-  left: 0;
-  z-index: 10;
-}
-
 .panel-body::after {
   content: "";
   position: absolute;
@@ -302,8 +290,8 @@ h2 {
   height: calc(100% - 16px);
   width: 0.5rem;
   top: 16px;
-  /* transform: translateY(-50%); */
-  left: 15.5%;
+  transform: translateX(-50%);
+  left: 50%;
   opacity: 0.75;
 }
 

@@ -7,12 +7,12 @@ permalink: /score/{{ title | slug }}/
     <div class="gc-full head-content">
         <h1 class="tac">Ma partition</h1>
         <div class="info">
-            <p></p>
-            <h2 class="tac"></h2>
+            <p>{{ title }}</p>
+            <h2 class="tac">{{ author }}</h2>
         </div>
     </div>
     <div class="player gc-full">
-        <div id="notation" class="panel-body">
+        <div id="notation" class="panel-body" data-mei-path="{{ mei_file }}">
             <div id="panel" class="panel"> </div>
         </div>
         <div class="progress-bar-container">
@@ -21,7 +21,7 @@ permalink: /score/{{ title | slug }}/
     </div>
 
     <div class="gc-full bottom-content">
-        <a to="/" class="return">
+        <a href="/" class="return">
             Retour
         </a>
         <div class="tools-container">
